@@ -1,0 +1,5 @@
+rootProject.name = 'javakv'
+include 'common'
+include 'connect'
+include 'raft'
+
