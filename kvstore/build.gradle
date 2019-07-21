@@ -1,16 +1,19 @@
-group 'com.xbb'
+group 'com.xbb.javakv'
 version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile project(":common")
+    compile project(":config")
+    compile project(":connect")
+    compile project(":raft")
 
     testCompile(
             'junit:junit:4.12'

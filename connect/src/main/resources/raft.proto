@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package com.xbb.javakv.connect.peer.message;
+
+option java_package = "com.xbb.javakv.connect.peer.message";
+option java_outer_classname = "RaftProto";
+option java_multiple_files = true;
+option java_generic_services = true;
+option optimize_for = SPEED;
+
+enum EntryType {
+    EntryNormal     = 0;
+    EntryConfChange = 1;
+}
+
+message Entry {
+    EntryType type = 1;
+    uint64 term   = 2;
+    uint64 index  = 3;
+    bytes data    = 4;
+}
+
+enum MessageType {
+    MsgEntries       = 0;
+    MsgEntriesResp   = 1;
+    MsgHeartbeat     = 2;
+    MsgHeartbeatResp = 3;
+    MsgVote          = 4;
+    MsgVoteResp      = 5;
+}
+
+message Message {
+    MessageType type        = 1;
+    uint64 to              = 2;
+    uint64 from            = 3;
+    uint64 term            = 4;
+    uint64 logTerm         = 5;
+    uint64 logIndex        = 6;
+    repeated Entry entries = 7;
+    bool result            = 8;
+}

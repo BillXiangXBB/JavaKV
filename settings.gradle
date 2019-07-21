@@ -3,4 +3,6 @@ include 'common'
 include 'connect'
 include 'raft'
 include 'config'
+include 'com.xbb.javakv.kvstore'
+include 'kvstore'
 

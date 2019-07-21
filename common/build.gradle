@@ -1,4 +1,4 @@
-group 'com.xbb.javakv'
+group 'javakv'
 version '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
